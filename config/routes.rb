@@ -1,7 +1,14 @@
 Rails.application.routes.draw do
+    get 'employees/login' => 'employees#login'
+    post 'employees/login' => 'employees#logincreate'
+    delete 'employees/logout' => 'employees#logout'
+
   resources :scores
   resources :players
   resources :employees
+
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

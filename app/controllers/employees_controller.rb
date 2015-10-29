@@ -10,6 +10,30 @@ class EmployeesController < ApplicationController
   # GET /employees/1
   # GET /employees/1.json
   def show
+    @employee = Employee.find(params[:id])
+  end
+  #login
+  def login
+  end
+
+  #post 
+  def logincreate
+    result = Employee.all.where(
+      name: params[:name], password: params[:password]).first
+    if result
+      session[:employee_id] = result.id
+      flash[:notice] = "You have logged in!"
+      redirect_to employee_path result
+    else
+      flash[:notice] = "Invalid login/password. Please try again."
+      redirect_to employees_login_path
+    end
+  end
+
+  def logout
+    session[:employee_id] = nil
+    flash[:notice] = "You have been logged out."
+    redirect_to employees_login_path
   end
 
   # GET /employees/new
@@ -20,6 +44,8 @@ class EmployeesController < ApplicationController
   # GET /employees/1/edit
   def edit
   end
+
+
 
   # POST /employees
   # POST /employees.json

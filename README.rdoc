@@ -1,0 +1,20 @@
+
+
+[] - Display Scores and Players
+	[] - All Time
+	[] - Weekend
+Employee
+[] - Login/Logout
+Employee Can:
+	[] - Record score releated to the player
+	[] - Add Players
+	[] - Edit Player
+	[] - Delete
+	[] - Record Scores
+[x] - Seed DB
+	[] - Validate lowest time is > 0
+[]- Join player on player:score
+[]
+[]
+[]
+[]
